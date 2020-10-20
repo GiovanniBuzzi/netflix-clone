@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+  box-sizing: border-box;
+}
+body{
+  background-color:#141414;
+  color: white;
+  font-family: Roboto;
+  margin: 0;
+  min-width: 820px;
+}
+.cardList{
+  margin-top: -180px;
+}

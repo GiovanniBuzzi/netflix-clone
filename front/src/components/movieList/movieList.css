@@ -1,0 +1,58 @@
+.movieListBox{
+    margin-bottom: 30px;
+
+}
+.movieListBox h2{
+    margin: 0px 0px 0px 30px;
+
+}
+.movieListBox .listArea{
+    overflow-x: hidden;
+    padding-left: 30px;
+}
+
+.movieListBox .list{
+    transition: ease-in 0.5s;
+}
+
+.movieListBox .movieListLeft{
+    background-color: blue;
+    left: 0;
+}
+
+.movieListBox .movieListRight{
+    background-color: red;
+    right: 0;
+}
+
+.movieListBox:hover .movieListLeft,
+.movieListBox:hover .movieListRight{
+    opacity: 1;
+}
+
+
+.movieListBox .movieListLeft,
+.movieListBox .movieListRight {
+   position:absolute;   
+   width: 40px;
+   height: 170px;
+   background-color:rgba(0,0,0,0.6);
+   z-index: 99;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   overflow: hidden;
+   cursor:pointer;
+   opacity: 0;
+   transition : all ease 1s;
+}
+
+.item{
+    display: inline-block;
+    width:300px;
+    cursor: pointer;
+}
+
+
+
+  

@@ -1,0 +1,47 @@
+.headerBox{
+    z-index: 100;
+    position: fixed;
+    background: linear-gradient(to bottom, #141414 , transparent);
+    transition: all ease 0.5s;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 71px;
+}
+
+.menu1{
+    display: flex;
+}
+
+.headerBox .logo img{
+    height: 30px;
+}
+
+.headerBox .logo{
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+.menu{
+    margin-left: 30px;
+}
+.headerBox .menu1 .menu li{
+    display: inline;
+    padding: inherit;
+    font-size: 0.95rem;
+    transition: all ease 0.5s;
+}
+.headerBox .menu1 .menu li:hover{
+    cursor: pointer;
+    color:grey;
+}
+.headerBox .menu2 img{
+    height: 35px;
+    border-radius: 3px;
+}
+.headerBox .menu2{
+    padding-left: 10px;
+    position: absolute;
+    right: 30px;
+}

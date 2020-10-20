@@ -1,0 +1,48 @@
+.movieCard img{
+    width:290px;
+    border-radius: 5px;
+}
+
+.movieCard .more .features .spotPoints{
+    color: #46d369;
+}
+
+.movieCard:hover{
+    margin-top: -180px;
+    position: absolute;
+    transform: scale(1.5);
+    z-index: 50;
+    background-color:#141414;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px black;
+}
+
+.movieCard:hover .movieCard.more{
+    transition: ease-in 3s;
+    background-color: gray; 
+}
+
+.movieCard .more .seeMore{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 15px;
+}
+
+.movieCard .more .features{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.movieCard h3{
+    text-shadow: 3px 3px black;
+    color: white;
+    position: absolute;
+    padding-left: 10px;
+    padding-top: 110px;
+}

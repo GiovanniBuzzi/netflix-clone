@@ -1,0 +1,82 @@
+.spotlightBox{
+    height: 100vh;
+}
+
+.spotlightBox .spotBoxV{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #111 20%, transparent 90%);
+}
+
+.spotlightBox .spotBoxV .spotBoxH{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #111 10%, transparent 90%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 30px;
+    padding-bottom: 180px;
+    padding-top: 100px;
+}
+
+.spotlightBox .spotBoxV .spotBoxH .spotName{
+    font-size: 60px;
+    font-weight: bold;
+    transition: ease-in 0.5s;
+}
+
+.spotlightBox .spotBoxV .spotBoxH .spotInfo {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: ease-in 0.5s;
+
+}
+
+.spotlightBox .spotBoxV .spotBoxH .spotInfo .spotYear, 
+.spotlightBox .spotBoxV .spotBoxH .spotInfo .spotPoints, 
+.spotlightBox .spotBoxV .spotBoxH .spotInfo .spotSeasons{
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.spotlightBox .spotBoxV .spotBoxH .spotInfo .spotPoints {
+    color: #46d369;
+}
+
+.spotlightBox .spotBoxV .spotBoxH .spotDesc{
+    margin-top: 15px;
+    font-size: 20px;
+    color: grey;
+    max-width: 40%;
+    transition: ease-in 0.5s;
+}
+
+.spotlightBox .spotBoxV .spotBoxH .spotButtons{
+    margin-top: 15px;
+}
+.spotlightBox .spotBoxV .spotBoxH .spotButtons .watch,
+.spotlightBox .spotBoxV .spotBoxH .spotButtons .mylist{
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-right: 10px;
+    opacity: 1;
+    transition: all ease 0.2s;
+}
+.spotlightBox .spotBoxV .spotBoxH .spotButtons .watch:hover,
+.spotlightBox .spotBoxV .spotBoxH .spotButtons .mylist:hover{
+    opacity: 0.7;
+}
+.spotlightBox .spotBoxV .spotBoxH .spotButtons .watch{
+    background-color: white;
+    color: black;
+}
+.spotlightBox .spotBoxV .spotBoxH .spotButtons .mylist{
+    background-color: #333;
+    color: white;
+}
