@@ -2,10 +2,10 @@ import React from 'react'
 
 import './header.css'
 
-const Header = () => {
+const Header = ({black}) => {
 
     return (
-        <div className="headerBox">
+        <div className={black? "headerBoxB" : "headerBox"}>
             <div className="menu1">
                 <div className="logo">
                     <a href="/home">

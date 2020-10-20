@@ -1,6 +1,5 @@
 .movieListBox{
-    margin-bottom: 30px;
-
+    margin-bottom: 60px;
 }
 .movieListBox h2{
     margin: 0px 0px 0px 30px;
@@ -16,12 +15,10 @@
 }
 
 .movieListBox .movieListLeft{
-    background-color: blue;
     left: 0;
 }
 
 .movieListBox .movieListRight{
-    background-color: red;
     right: 0;
 }
 

@@ -27,6 +27,7 @@ const Routes = () => (
       <Route exact path="/" component={() => <Login/>} />
       <Route exact path="/register" component={() => <Register/>} />
       <PrivateRoute exact path="/home" component={() => <Home/>}/>
+      <PrivateRoute exact path="/home/:jvb" component={() => <Home/>}/>
       <Route path="/*" component={() => <Redirect to path='/'>{alert('Page Not Found')}</Redirect>}/>
     </Switch>
   </BrowserRouter>

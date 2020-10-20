@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
-import './movieCard.css'
+import { Link } from 'react-router-dom';
+
+import './movieCard.css';
 
 import AddIcon from '@material-ui/icons/Add';
 import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
@@ -8,9 +10,16 @@ import ThumbDownIcon from '@material-ui/icons/ThumbDown';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
+import MousePosition from '../mousePosition/mousePosition';
+
 const MovieCard = ({item}) => {
 
     const [hover, setHover] = useState(false);
+    const [mouse, setMouse] = useState(false);
+
+    const { x,y } = MousePosition();
+
+    const hasMovedCursor = typeof x === "number" && typeof y === "number";
 
     function handleCard(){
         setHover(true);
@@ -18,6 +27,10 @@ const MovieCard = ({item}) => {
 
     function leaveCard(){
         setHover(false);
+    }
+
+    function mouseCard(){
+        setMouse(true);
     }
 
     let date;
@@ -41,23 +54,27 @@ const MovieCard = ({item}) => {
             title = item.name.substring(0, 200)  + '...';
         }
     }
-    console.log(title)    
 
     return(
-        <div className="movieCard" onMouseOver={handleCard} onMouseLeave={leaveCard}>
+        <div className={x < window.innerWidth/4 ? 'movieCardL' : x > window.innerWidth*3/4? 'movieCardR' : 'movieCard'}
+            onMouseOver={mouseCard} 
+            onMouseEnter={handleCard} 
+            onMouseLeave={leaveCard}
+            style={mouse? {marginTop:'-180px'}: {}
+            }>
             <h3>{item.title ? (item.title.length > 28 ? item.title.substring(0,28) + '...' : item.title) : (item.name.length > 28 ? item.name.substring(0,28) + '...' : item.name)}</h3>
             <img src={`https://image.tmdb.org/t/p/w500${item.backdrop_path}`}/>
             {hover?
             <div className="more">
                 <div className="seeMore">
                     <div className="icons">
-                        <PlayArrowIcon style={{ fontSize: 40, borderRadius:20, backgroundColor:'white', opacity:0.9,color: '#131313', boxShadow: '5px 5px 5px black', padding: 8}}/>
-                        <AddIcon style={{ fontSize: 40, border: "2px solid white", borderRadius:20, color: 'white', opacity:0.9, boxShadow: '5px 5px 5px black', padding: 8}} />
-                        <ThumbUpAltIcon style={{ fontSize: 40, border: "2px solid white", borderRadius:20, color: 'white', opacity:0.9, boxShadow: '5px 5px 5px black', padding: 8}} />
-                        <ThumbDownIcon style={{ fontSize: 40, border: "2px solid white", borderRadius:20, color: 'white', opacity:0.9, boxShadow: '5px 5px 5px black', padding: 8}} />
+                        <div className='icon'><PlayArrowIcon/> </div>
+                        <div className='icon'><AddIcon/></div>
+                        <div className='icon'><ThumbUpAltIcon/></div>
+                        <div className='icon'><ThumbDownIcon/></div>
                     </div>
                     <div className="icons">
-                        <ExpandMoreIcon style={{ fontSize: 40, border: "2px solid white", borderRadius:20, color: 'white', opacity:0.9, boxShadow: '5px 5px 5px black', padding: 8 }} />
+                        <Link to={`/home/:jvb=${item.id}`}><ExpandMoreIcon/></Link>
                     </div>
                 </div>
                 <div className="features">
@@ -66,7 +83,6 @@ const MovieCard = ({item}) => {
                 </div>
             </div> : <div></div>
             }
-            
         </div>
     )
 }

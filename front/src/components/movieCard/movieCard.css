@@ -1,14 +1,21 @@
-.movieCard img{
-    width:290px;
+.movieCardL img,
+.movieCard img,
+.movieCardR img {
+    width:295px;
     border-radius: 5px;
 }
 
-.movieCard .more .features .spotPoints{
+
+.movieCardL .more .features .spotPoints,
+.movieCard .more .features .spotPoints,
+.movieCardR .more .features .spotPoints{
     color: #46d369;
 }
 
-.movieCard:hover{
-    margin-top: -180px;
+.movieCardL:hover,
+.movieCard:hover,
+.movieCardR:hover{
+    transition: ease-in 0.3s;
     position: absolute;
     transform: scale(1.5);
     z-index: 50;
@@ -17,12 +24,23 @@
     box-shadow: 5px 5px 5px black;
 }
 
-.movieCard:hover .movieCard.more{
-    transition: ease-in 3s;
-    background-color: gray; 
+.movieCardL:hover{
+    transform-origin:left ;
 }
 
-.movieCard .more .seeMore{
+.movieCardR:hover{
+    transform-origin:right ;
+}
+
+.movieCardL:hover .movieCardL.more,
+.movieCard:hover .movieCardL.more,
+.movieCardR:hover .movieCardR.more{
+    transition: 500ms ease-in 0.5s;
+}
+
+.movieCardL .more .seeMore,
+.movieCard .more .seeMore,
+.movieCardR .more .seeMore{
     display: flex;
     justify-content: space-between;
     margin-left: 15px;
@@ -30,7 +48,9 @@
     margin-top: 15px;
 }
 
-.movieCard .more .features{
+.movieCardL .more .features,
+.movieCard .more .features,
+.movieCardR .more .features{
     display: flex;
     justify-content: space-between;
     margin-left: 40px;
@@ -39,10 +59,25 @@
     margin-bottom: 20px;
 }
 
-.movieCard h3{
+.movieCardL h3,
+.movieCard h3,
+.movieCardR h3{
     text-shadow: 3px 3px black;
     color: white;
     position: absolute;
     padding-left: 10px;
     padding-top: 110px;
+}
+
+.icons{
+    display: flex;
+}
+
+.icon{
+    opacity: 0.5;
+    border: 2px, solid, white;
+    padding-right: 20px;
+}
+.icon:hover{
+    opacity: 1;
 }
